@@ -1,6 +1,5 @@
 import { Container, Image } from "@chakra-ui/react";
 
-
 export default function ProfileIcon() {
     return(
         <Container>
