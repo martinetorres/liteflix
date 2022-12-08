@@ -1,5 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
+import MenuIcon from "../menuIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";
 
@@ -11,6 +12,8 @@ export default function Navbar() {
             </Heading>
             
             <ButtonWithIcon variant='secondary' />
+
+            <MenuIcon />
 
             <NotificationsIcon />
 
