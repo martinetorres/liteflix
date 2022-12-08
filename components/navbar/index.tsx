@@ -3,6 +3,7 @@ import ButtonWithIcon from "../buttonWithIcon";
 import MenuIcon from "../menuIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";
+import { AddIcon } from '@chakra-ui/icons';
 
 export default function Navbar() {
     return(
@@ -23,7 +24,7 @@ export default function Navbar() {
 
                 <Spacer boxSize={60} />
                 
-                <ButtonWithIcon variant='secondary' />
+                <ButtonWithIcon text='Agregar pelicula' variant='secondary' icon={<AddIcon />} />
             </Flex>
 
             <Flex alignItems={'center'}>

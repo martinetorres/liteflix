@@ -1,4 +1,6 @@
-import { Flex, Container, Heading, Image, Box } from "@chakra-ui/react";
+import { Flex, Container, Heading, Image, Box, Spacer } from "@chakra-ui/react";
+import ButtonWithIcon from "../buttonWithIcon";
+import { AddIcon, ArrowRightIcon } from "@chakra-ui/icons";
 
 export default function Slider() {
     return(
@@ -20,6 +22,12 @@ export default function Slider() {
                         <Heading as='h2' colorScheme={'brand'} textTransform={'uppercase'}>
                             La casa de papel
                         </Heading>
+
+                        <Flex direction='row' alignItems='flex-start' justifyContent='flex-start' gap={20} marginTop={10}>
+                            <ButtonWithIcon text='Agregar pelicula' variant="primary" icon={<AddIcon />} />
+
+                            <ButtonWithIcon text='Mi lista' variant="secondary" hasBorder={true} icon={<ArrowRightIcon />} />
+                        </Flex>
                     </Box>
                 </Flex>
         </Container>
