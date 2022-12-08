@@ -15,7 +15,7 @@ export const theme = {
                 color: '#64EEBC',
                 textTransform: 'uppercase',
             },
-            h4: {
+            'h4, h5': {
                 color: '#ffffff',
                 letterSpacing: '4px',
                 fontWeight: 400,
@@ -26,6 +26,9 @@ export const theme = {
             },
             'h4 b': {
                 fontWeight: 700,
+            },
+            'h5': {
+                fontSize: '16px',
             },
             '.brand': {
                 color: '#64EEBC',
