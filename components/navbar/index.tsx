@@ -1,4 +1,4 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Spacer } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
 import MenuIcon from "../menuIcon";
 import NotificationsIcon from "../notificationsIcon";
@@ -6,18 +6,29 @@ import ProfileIcon from "../profileIcon";
 
 export default function Navbar() {
     return(
-        <Flex position={'absolute'} zIndex={2} alignItems='center'>
-            <Heading as='h1' className='brand'>
-                <b>Lite</b>flix
-            </Heading>
-            
-            <ButtonWithIcon variant='secondary' />
+        <Flex position={'absolute'} zIndex={2} alignItems='center' justifyContent='space-between' w='100%'>
 
-            <MenuIcon />
+            <Flex>
+                <Heading as='h1' className='brand'>
+                    <b>Lite</b>flix
+                </Heading>
 
-            <NotificationsIcon />
+                <Spacer boxSize={60} />
+                
+                <ButtonWithIcon variant='secondary' />
+            </Flex>
 
-            <ProfileIcon />
+            <Flex alignItems={'center'}>
+                <MenuIcon />
+
+                <Spacer boxSize={30} />
+
+                <NotificationsIcon />
+
+                <Spacer boxSize={30} />
+
+                <ProfileIcon />
+            </Flex>
         </Flex>
     )
 }
