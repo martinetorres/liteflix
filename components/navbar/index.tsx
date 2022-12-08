@@ -6,7 +6,15 @@ import ProfileIcon from "../profileIcon";
 
 export default function Navbar() {
     return(
-        <Flex position={'absolute'} zIndex={2} alignItems='center' justifyContent='space-between' w='100%'>
+        <Flex 
+            position={'absolute'} 
+            zIndex={2} 
+            alignItems='center' 
+            justifyContent='space-between' 
+            w='100%' 
+            paddingRight={50} 
+            paddingLeft={50} 
+            paddingTop={10}>
 
             <Flex>
                 <Heading as='h1' className='brand'>
