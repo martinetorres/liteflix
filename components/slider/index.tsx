@@ -15,7 +15,7 @@ export default function Slider() {
                     left={0}
                 />
 
-                <Grid position='absolute' templateColumns='repeat(12, 1fr)' templateRows='repeat(12, 1fr)' gap={50} left={0} bottom={0} paddingBottom={50} boxSize='100%'>
+                <Grid position='absolute' templateColumns='repeat(12, 1fr)' templateRows='repeat(12, 1fr)' columnGap={50} left={0} bottom={0} paddingBottom={50} boxSize='100%'>
                     <GridItem colSpan={10} rowEnd={12}>
                         <Box padding={50}>
                             <Heading as='h4'>
@@ -33,7 +33,7 @@ export default function Slider() {
                         </Box>
                     </GridItem>
 
-                    <GridItem colSpan={2} gridColumnEnd={12} rowEnd={7}>
+                    <GridItem colSpan={2} gridColumnEnd={12} rowEnd={6}>
                         <Box>
                             <FeaturedMovies />
                         </Box>
