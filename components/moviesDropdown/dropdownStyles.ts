@@ -17,7 +17,8 @@ export const dropdownStyles: StylesConfig = {
     menu: (styles) => ({
         ...styles,
         backgroundColor: mainBackgroundColor,
-        width: 150,
+        width: 180,
+        left: -30,
     }),
     singleValue: (styles) => ({
         ...styles,
