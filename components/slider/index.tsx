@@ -1,7 +1,8 @@
-import { Flex, Container, Heading, Image, Box, Spacer, Grid, GridItem } from "@chakra-ui/react";
+import { Flex, Container, Heading, Image, Box, Select } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
 import { AddIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import FeaturedMovies from "../featuredMovies";
+import MoviesDropdown from "../moviesDropdown";
 
 export default function Slider() {
     return(
@@ -15,31 +16,33 @@ export default function Slider() {
                     left={0}
                 />
 
-                <Grid position='absolute' templateColumns='repeat(12, 1fr)' templateRows='repeat(12, 1fr)' columnGap={50} left={0} bottom={0} paddingBottom={50} boxSize='100%'>
-                    <GridItem colSpan={10} rowEnd={12}>
-                        <Box padding={50}>
-                            <Heading as='h4'>
-                                Original de <b>Liteflix</b>
-                            </Heading>
-                            <Heading as='h2' colorScheme={'brand'} textTransform={'uppercase'}>
-                                La casa de papel
-                            </Heading>
+                <Flex direction='row' 
+                    position='absolute' 
+                    alignItems='flex-end' 
+                    boxSize='100%'
+                    justifyContent='space-between'>
 
-                            <Flex direction='row' alignItems='flex-start' justifyContent='flex-start' gap={20} marginTop={10}>
-                                <ButtonWithIcon text='Agregar pelicula' variant="primary" icon={<AddIcon />} />
+                    <Box paddingLeft={50} paddingBottom={80}>
+                        <Heading as='h4'>
+                            Original de <b>Liteflix</b>
+                        </Heading>
+                        <Heading as='h2' colorScheme={'brand'} textTransform={'uppercase'}>
+                            La casa de papel
+                        </Heading>
 
-                                <ButtonWithIcon text='Mi lista' variant="secondary" hasBorder={true} icon={<ArrowRightIcon />} />
-                            </Flex>
-                        </Box>
-                    </GridItem>
+                        <Flex direction='row' alignItems='flex-start' justifyContent='flex-start' gap={20} marginTop={10}>
+                            <ButtonWithIcon text='Agregar pelicula' variant="primary" icon={<AddIcon />} />
 
-                    <GridItem colSpan={2} gridColumnEnd={12} rowEnd={6}>
-                        <Box>
-                            <FeaturedMovies />
-                        </Box>
-                    </GridItem>
+                            <ButtonWithIcon text='Mi lista' variant="secondary" hasBorder={true} icon={<ArrowRightIcon />} />
+                        </Flex>
+                    </Box>
+                    
+                    <Box paddingRight={50} alignSelf='center'>
+                        <MoviesDropdown />
+                        <FeaturedMovies />
+                    </Box>
 
-                </Grid>
+                </Flex>
         </Container>
     )
 }

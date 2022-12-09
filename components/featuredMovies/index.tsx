@@ -3,7 +3,7 @@ import MovieThumbnail from "../movieThumbnail";
 
 export default function FeaturedMovies() {
     return(
-        <Flex position='absolute' direction='column' gap={10}>
+        <Flex direction='column' gap={15}>
             <MovieThumbnail />
             <MovieThumbnail />
             <MovieThumbnail />
