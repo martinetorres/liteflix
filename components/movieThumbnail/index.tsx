@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, Image, Spacer } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import RoundedButton from "../roundedButton";
 import ImageIcon from "../ui/imageIcon";

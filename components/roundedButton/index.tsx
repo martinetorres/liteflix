@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
 import ImageIcon from "../ui/imageIcon";
 
 export default function RoundedButton({size} : {size: number}) {

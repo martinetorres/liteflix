@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import styles from './styles.module.css';
 
 export default function ButtonWithIcon({ text, variant, hasBorder, icon } : { text: string, variant: string, hasBorder?: boolean, icon?: React.ReactNode }) {

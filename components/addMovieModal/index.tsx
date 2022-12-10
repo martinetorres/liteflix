@@ -1,4 +1,4 @@
-import { Button, Container, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 
 export default function AddMovieModal() {
     const { isOpen, onOpen, onClose } = useDisclosure()
