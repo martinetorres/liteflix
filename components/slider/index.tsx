@@ -1,6 +1,5 @@
-import { Flex, Container, Heading, Image, Box, Select } from "@chakra-ui/react";
+import { Flex, Container, Heading, Image, Box } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
-import { AddIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import FeaturedMovies from "../featuredMovies";
 import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
