@@ -3,6 +3,7 @@ import ButtonWithIcon from "../buttonWithIcon";
 import { AddIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import FeaturedMovies from "../featuredMovies";
 import MoviesDropdown from "../moviesDropdown";
+import ImageIcon from "../ui/imageIcon";
 
 export default function Slider() {
     return(
@@ -31,9 +32,18 @@ export default function Slider() {
                         </Heading>
 
                         <Flex direction='row' alignItems='flex-start' justifyContent='flex-start' gap={20} marginTop={10}>
-                            <ButtonWithIcon text='Agregar pelicula' variant="primary" icon={<AddIcon />} />
+                            <ButtonWithIcon 
+                                text='Reproducir' 
+                                variant="primary" 
+                                icon={<ImageIcon boxSize={25} img='play' />} 
+                            />
 
-                            <ButtonWithIcon text='Mi lista' variant="secondary" hasBorder={true} icon={<ArrowRightIcon />} />
+                            <ButtonWithIcon 
+                                text='Mi lista' 
+                                variant="secondary" 
+                                hasBorder={true} 
+                                icon={<ImageIcon boxSize={25} img='plus' />} 
+                            />
                         </Flex>
                     </Box>
                     
