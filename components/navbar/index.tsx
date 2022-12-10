@@ -1,9 +1,9 @@
 import { Flex, Heading, Spacer } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
-import MenuIcon from "../menuIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";
 import { AddIcon } from '@chakra-ui/icons';
+import ImageIcon from "../ui/imageIcon";
 
 export default function Navbar() {
     return(
@@ -28,7 +28,7 @@ export default function Navbar() {
             </Flex>
 
             <Flex alignItems={'center'}>
-                <MenuIcon />
+                <ImageIcon boxSize={30} iconWidth={27} img='menu' />
 
                 <Spacer boxSize={30} />
 
