@@ -1,4 +1,5 @@
 import { Flex, Container, Heading, Image, Box } from "@chakra-ui/react";
+import { useState } from "react";
 import AddMovieModal from "../addMovieModal";
 import ButtonWithIcon from "../buttonWithIcon";
 import FeaturedMovies from "../featuredMovies";
@@ -6,6 +7,7 @@ import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
 
 export default function Slider() {
+
     return(
         <Container>
             <Image 
@@ -23,7 +25,7 @@ export default function Slider() {
                 boxSize='100%'
                 justifyContent='space-between'>
 
-                <Box paddingLeft={50} paddingBottom={80}>
+                <Box paddingLeft={50} paddingBottom={110}>
                     <Heading as='h4'>
                         Original de <b>Liteflix</b>
                     </Heading>
@@ -52,7 +54,7 @@ export default function Slider() {
                     <FeaturedMovies />
                 </Box>
 
-<AddMovieModal />
+                <AddMovieModal />
 
             </Flex>
         </Container>

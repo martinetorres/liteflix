@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Slider from '../components/slider'
 import Navbar from '../components/navbar'
-import { CSSReset } from '@chakra-ui/react'
+import ModalContext from '../context/modalContext'
 
 export default function Home() {
   return (

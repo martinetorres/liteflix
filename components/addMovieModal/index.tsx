@@ -1,25 +1,35 @@
-import { Button, ChakraProvider, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
-import React from "react";
+import { ChakraProvider, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
+import { useState } from "react";
+import ModalContext from "../../context/modalContext";
 
-const AddMovieModal : React.FunctionComponent = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+export default function AddMovieModal () {
+    const { onClose } = useDisclosure();
+
+    const handleClose = ( closeModalCallback : Function ) => {
+        closeModalCallback();
+        onClose();
+    }
+
     return(
         <>
         <ChakraProvider resetCSS={false} >
-            <Button onClick={onOpen} >open</Button>
-            <Modal isOpen={isOpen} onClose={onClose} id='modal1' useInert={false}>
-                <ModalOverlay bg='#00000030'/>
-                <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        modal body
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
+            <ModalContext.Consumer>
+                { ({modalIsOpen, openModal, closeModal}) => (
+                    <>
+                    <Modal isOpen={modalIsOpen} onClose={() => handleClose(closeModal)} id='modal1' useInert={false}>
+                        <ModalOverlay bg='#00000070'/>
+                        <ModalContent>
+                            <ModalHeader>Modal Title</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody>
+                                modal body
+                            </ModalBody>
+                        </ModalContent>
+                    </Modal>
+                    </>
+                )}
+            </ModalContext.Consumer>
         </ChakraProvider>
         </>
     )
 }
-
-export default AddMovieModal;

@@ -1,9 +1,10 @@
-import { Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Flex, Heading, ModalContextProvider, Spacer } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";
 import { AddIcon } from '@chakra-ui/icons';
 import ImageIcon from "../ui/imageIcon";
+import ModalContext from "../../context/modalContext";
 
 export default function Navbar() {
     return(
@@ -24,7 +25,11 @@ export default function Navbar() {
 
                 <Spacer boxSize={60} />
                 
-                <ButtonWithIcon text='Agregar pelicula' variant='secondary' icon={<AddIcon />} />
+                <ModalContext.Consumer>
+                    { ({openModal})  => 
+                        <ButtonWithIcon text='Agregar película' variant='secondary' icon={<AddIcon />} onClick={ () => openModal() } />
+                    }
+                </ModalContext.Consumer>
             </Flex>
 
             <Flex alignItems={'center'}>
