@@ -41,12 +41,10 @@ button:hover {
   font-family: "BebasNeue";
   src: url('../public/fonts/BebasNeue-Book.ttf');
   font-weight: normal;
-  font-style: normal;
 }
   
 @font-face {
   font-family: "BebasNeue";
   src: url('../public/fonts/BebasNeue-Bold.ttf');
   font-weight: bold;
-  font-style: normal;
 }

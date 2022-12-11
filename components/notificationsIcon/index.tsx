@@ -1,11 +1,11 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import ImageIcon from "../ui/imageIcon";
 
 export default function NotificationsIcon() {
     return(
-        <Container position='relative'>
-            <Box position='absolute' top={2} right={3} background='#64EEBC' boxSize={9} borderRadius='50%'></Box>
+        <Box position='relative'>
+            <Box position='absolute' top='2px' right='3px' background='#64EEBC' boxSize='9px' borderRadius='50%'></Box>
             <ImageIcon boxSize={30} iconWidth={26} img='bell' />
-        </Container>
+        </Box>
     )
 }

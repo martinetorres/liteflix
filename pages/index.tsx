@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Slider from '../components/slider'
 import Navbar from '../components/navbar'
 import ModalContext from '../context/modalContext'
+import SideMenu from '../components/sideMenu'
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
         <Navbar />
 
         <Slider />
+
+        <SideMenu />
       </main>
       
     </div>

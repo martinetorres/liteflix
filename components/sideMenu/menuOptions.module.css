@@ -1,0 +1,22 @@
+.listItem {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.listItem:hover {
+    opacity: 1;
+}
+
+.addMovieButton {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.addMovieButton button>div {
+    justify-content: 'flex-start';
+}
+
+.addMovieButton p {
+    font-size: 22px;
+    padding-left: 15px;
+}
