@@ -1,21 +1,24 @@
+import { extendTheme } from "@chakra-ui/react";
+
+const desktopBreakpoint = '1200px';
 
 export const theme = {
     styles: {
         global: {
             '*': {
                 fontFamily: 'BebasNeue',
-                fontWeight: 'normal'
+                fontWeight: 'normal',
             },
             b: {
                 fontWeight: 'bold',
             },
             h2: {
-                fontSize: '120px',
+                fontSize: { base: '76px', desktop: '120px' },
                 lineSpacing: '12px',
                 letterSpacing: '16px',
                 fontWeight: 700,
                 margin: 0,
-                lineHeight: '130px',
+                lineHeight: { base: '90px', desktop: '130px' },
             },
             'h1, h2, h3': {
                 color: '#64EEBC',
@@ -45,5 +48,8 @@ export const theme = {
                 letterSpacing: 4,
             },
         }   
+    },
+    breakpoints: {
+        desktop: desktopBreakpoint
     }
 };

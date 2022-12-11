@@ -1,5 +1,4 @@
 import { Flex, Container, Heading, Image, Box } from "@chakra-ui/react";
-import { useState } from "react";
 import AddMovieModal from "../addMovieModal";
 import ButtonWithIcon from "../buttonWithIcon";
 import FeaturedMovies from "../featuredMovies";
@@ -19,21 +18,41 @@ export default function Slider() {
                 left={0}
             />
 
-            <Flex direction='row' 
-                position='absolute' 
-                alignItems='flex-end' 
+            <Flex position='absolute' 
                 boxSize='100%'
-                justifyContent='space-between'>
+                justifyContent='space-between'
+                alignItems={{base: 'center', desktop: 'flex-end'}}
+                top={{base: '40vh', desktop: 0}}
+                direction={{base: 'column', desktop: 'row'}}
+                textAlign={{base: 'center', desktop: 'left'}}
+            >
 
-                <Box paddingLeft={50} paddingBottom={110}>
+                <Box 
+                    paddingLeft={{ base: 0, desktop: 50 }} 
+                    paddingBottom={{ base: 50, desktop: 110 }}
+                >
+
                     <Heading as='h4'>
                         Original de <b>Liteflix</b>
                     </Heading>
-                    <Heading as='h2' colorScheme={'brand'} textTransform={'uppercase'}>
+
+                    <Heading 
+                        as='h2' 
+                        colorScheme={'brand'} 
+                        textTransform={'uppercase'}
+                    >
                         La casa de papel
                     </Heading>
 
-                    <Flex direction='row' alignItems='flex-start' justifyContent='flex-start' gap={20} marginTop={10}>
+                    <Flex 
+                        direction='row' 
+                        justifyContent={{base: 'center', desktop: 'flex-start'}} 
+                        alignItems='flex-start' 
+                        gap={20} 
+                        marginTop={10}
+                        flexWrap='wrap'
+                    >
+                        
                         <ButtonWithIcon 
                             text='Reproducir' 
                             variant="primary" 
