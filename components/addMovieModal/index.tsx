@@ -21,7 +21,7 @@ export default function AddMovieModal () {
                         onClose={() => handleClose(closeModal)} 
                         id='add-movie-modal' 
                         useInert={false}
-                        size='3x1'
+                        size='3xl'
                         isCentered={true}>
                         
                         <ModalOverlay bg='#00000070'/>
