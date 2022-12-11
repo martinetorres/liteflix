@@ -36,14 +36,14 @@ export default function MovieThumbnail() {
                 </Heading>
 
                 <Box position='relative' boxSize='100%'>
-                    <Flex position='absolute' top={5} left={0} display={isHovered ? 'flex' : 'none'} direction='row' justifyContent='space-between' w='100%' alignItems='center' color='white' paddingLeft={10} paddingRight={10}>
-                        <Flex direction='row' fontSize={14}>
+                    <Flex position='absolute' top={10} left={0} display={isHovered ? 'flex' : 'none'} direction='row' justifyContent='space-between' w='100%' alignItems='center' color='white' paddingLeft={10} paddingRight={10}>
+                        <Flex direction='row' fontSize={14} lineHeight={1} letterSpacing={4}>
                             <ImageIcon boxSize={12} img='star' />
                             <Box marginLeft={5}>
                                 7
                             </Box>
                         </Flex>
-                        <Box display='inline-block' fontSize={14}>
+                        <Box display='inline-block' fontSize={14} lineHeight={1} letterSpacing={4}>
                             2020
                         </Box>
                     </Flex>

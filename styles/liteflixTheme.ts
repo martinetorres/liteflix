@@ -15,6 +15,7 @@ export const theme = {
                 letterSpacing: '16px',
                 fontWeight: 700,
                 margin: 0,
+                lineHeight: '130px',
             },
             'h1, h2, h3': {
                 color: '#64EEBC',
@@ -28,12 +29,14 @@ export const theme = {
                 fontSize: '20px',
                 marginBottom: 0,
                 paddingLeft: 4,
+                lineHeight: '20px',
             },
             'h4 b': {
                 fontWeight: 700,
             },
             'h5': {
                 fontSize: '16px',
+                lineHeight: '16px',
             },
             '.brand': {
                 color: '#64EEBC',
