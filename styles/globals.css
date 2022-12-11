@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+body.chakra-ui-light {
+  position: static !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -25,7 +29,7 @@ a {
 
 @font-face {
   font-family: "BebasNeue";
-  src: url('../public/fonts/BebasNeue-Regular.ttf');
+  src: url('../public/fonts/BebasNeue-Book.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,12 +38,5 @@ a {
   font-family: "BebasNeue";
   src: url('../public/fonts/BebasNeue-Bold.ttf');
   font-weight: bold;
-  font-style: normal;
-}
-  
-@font-face {
-  font-family: "BebasNeue";
-  src: url('../public/fonts/BebasNeue-Light.ttf');
-  font-weight: lighter;
   font-style: normal;
 }

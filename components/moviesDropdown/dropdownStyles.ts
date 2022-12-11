@@ -23,6 +23,7 @@ export const dropdownStyles: StylesConfig = {
     singleValue: (styles) => ({
         ...styles,
         color: mainFontColor,
+        fontWeight: 'bold',
     }),
     placeholder: (styles) => ({
         ...styles,

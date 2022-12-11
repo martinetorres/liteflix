@@ -1,8 +1,13 @@
+
 export const theme = {
     styles: {
         global: {
-            html: {
-                fontFamily: "BebasNeue",
+            '*': {
+                fontFamily: 'BebasNeue',
+                fontWeight: 'normal'
+            },
+            b: {
+                fontWeight: 'bold',
             },
             h2: {
                 fontSize: '120px',
@@ -38,4 +43,4 @@ export const theme = {
             },
         }   
     }
-}
+};

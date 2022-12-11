@@ -1,4 +1,5 @@
 import { Flex, Container, Heading, Image, Box } from "@chakra-ui/react";
+import AddMovieModal from "../addMovieModal";
 import ButtonWithIcon from "../buttonWithIcon";
 import FeaturedMovies from "../featuredMovies";
 import MoviesDropdown from "../moviesDropdown";
@@ -50,6 +51,8 @@ export default function Slider() {
                     <MoviesDropdown />
                     <FeaturedMovies />
                 </Box>
+
+<AddMovieModal />
 
             </Flex>
         </Container>

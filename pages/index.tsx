@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Slider from '../components/slider'
 import Navbar from '../components/navbar'
+import { CSSReset } from '@chakra-ui/react'
 
 export default function Home() {
   return (

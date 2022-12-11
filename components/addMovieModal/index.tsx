@@ -1,12 +1,14 @@
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, ChakraBaseProvider, ChakraProvider, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Portal, useDisclosure } from "@chakra-ui/react";
+import React from "react";
 
-export default function AddMovieModal() {
+const AddMovieModal : React.FunctionComponent = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return(
         <>
-            <Button onClick={onOpen}>Open Modal</Button>
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
+        <ChakraProvider resetCSS={false} >
+            <Button onClick={onOpen} >open</Button>
+            <Modal isOpen={isOpen} onClose={onClose} id='modal1' useInert={false}>
+                <ModalOverlay bg='#00000030'/>
                 <ModalContent>
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
@@ -15,6 +17,9 @@ export default function AddMovieModal() {
                     </ModalBody>
                 </ModalContent>
             </Modal>
+        </ChakraProvider>
         </>
     )
 }
+
+export default AddMovieModal;
