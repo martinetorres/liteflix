@@ -1,4 +1,4 @@
-import { Box, Button, ChakraBaseProvider, ChakraProvider, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Portal, useDisclosure } from "@chakra-ui/react";
+import { Button, ChakraProvider, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import React from "react";
 
 const AddMovieModal : React.FunctionComponent = () => {
