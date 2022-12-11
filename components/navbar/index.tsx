@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, ModalContextProvider, Spacer } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import ButtonWithIcon from "../ui/buttonWithIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";

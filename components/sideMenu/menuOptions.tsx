@@ -20,7 +20,7 @@ export default function MenuOptions() {
             {
                 menuOptions.map( (item: string) => {
                     return(
-                        <ListItem className={styles.listItem}>
+                        <ListItem key={item} className={styles.listItem}>
                             {item}
                         </ListItem>
                     )

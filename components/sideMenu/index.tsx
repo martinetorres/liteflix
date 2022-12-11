@@ -6,7 +6,6 @@ import {
     DrawerContent,
     DrawerCloseButton,
     useDisclosure,
-    Button,
     ChakraProvider,
     Flex,
   } from '@chakra-ui/react'
