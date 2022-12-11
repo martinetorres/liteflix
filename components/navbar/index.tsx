@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, ModalContextProvider, Spacer } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, ModalContextProvider, Spacer } from "@chakra-ui/react";
 import ButtonWithIcon from "../buttonWithIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";
@@ -12,44 +12,41 @@ export default function Navbar() {
         <Flex 
             position={'absolute'} 
             zIndex={2} 
-            alignItems='center' 
+            alignItems='center'
             justifyContent='space-between' 
             w='100%' 
             paddingRight={50} 
             paddingLeft={50} 
-            paddingTop={10}>
+            paddingTop={10}
+            gap={40}>
 
-            <Flex>
                 <Heading as='h1' className='brand'>
                     <b>Lite</b>flix
                 </Heading>
-
-                <Spacer boxSize={60} />
                 
-                <ModalContext.Consumer>
-                    { ({openModal})  => 
-                        <ButtonWithIcon text='Agregar película' variant='secondary' icon={<AddIcon />} onClick={ () => openModal() } />
-                    }
-                </ModalContext.Consumer>
-            </Flex>
+                <Box display={{base: 'none', desktop: 'inline-block' }} justifySelf='flex-start' marginRight='auto'>
+                    <ModalContext.Consumer>
+                        { ({openModal})  => 
+                            <ButtonWithIcon text='Agregar película' variant='secondary' icon={<AddIcon />} onClick={ () => openModal() } />
+                        }
+                    </ModalContext.Consumer>
+                </Box>
 
-            <Flex alignItems={'center'}>
-                <DrawerContext.Consumer>
-                    { ({openDrawer}) =>
-                        <Button onClick={ () => openDrawer() }>
-                            <ImageIcon boxSize={30} iconWidth={27} img='menu' />
-                        </Button>
-                    }
-                </DrawerContext.Consumer>
+                <Box order={{ base: -1, desktop: 'inherit' }}>
+                    <DrawerContext.Consumer>
+                        { ({openDrawer}) =>
+                            <Button onClick={ () => openDrawer() }>
+                                <ImageIcon boxSize={30} iconWidth={27} img='menu' />
+                            </Button>
+                        }
+                    </DrawerContext.Consumer>
+                </Box>
 
-                <Spacer boxSize={30} />
-
-                <NotificationsIcon />
-
-                <Spacer boxSize={30} />
+                <Box display={{base: 'none', desktop: 'inline-block' }} justifySelf='flex-end'>
+                    <NotificationsIcon />
+                </Box>
 
                 <ProfileIcon />
-            </Flex>
         </Flex>
     )
 }
