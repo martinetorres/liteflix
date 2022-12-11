@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, ModalContextProvider, Spacer } from "@chakra-ui/react";
-import ButtonWithIcon from "../buttonWithIcon";
+import ButtonWithIcon from "../ui/buttonWithIcon";
 import NotificationsIcon from "../notificationsIcon";
 import ProfileIcon from "../profileIcon";
 import { AddIcon } from '@chakra-ui/icons';

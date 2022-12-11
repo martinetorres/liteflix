@@ -1,7 +1,7 @@
 import { AddIcon } from "@chakra-ui/icons";
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import ModalContext from "../../context/modalContext";
-import ButtonWithIcon from "../buttonWithIcon";
+import ButtonWithIcon from "../ui/buttonWithIcon";
 import styles from './menuOptions.module.css';
 
 export default function MenuOptions() {

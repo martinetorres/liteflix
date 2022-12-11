@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Heading, Image } from "@chakra-ui/react";
 import { useState } from "react";
-import RoundedButton from "../roundedButton";
+import PlayButton from "../playButton";
 import ImageIcon from "../ui/imageIcon";
 
 export default function MovieThumbnail() {
@@ -29,7 +29,7 @@ export default function MovieThumbnail() {
             flexWrap={isHovered ? 'wrap' : 'nowrap'}
             cursor='pointer'>
 
-                <RoundedButton size={isHovered ? 28 : 40} />
+                <PlayButton size={isHovered ? 28 : 40} />
 
                 <Heading as='h5' marginTop={20} marginBottom={15} marginLeft={isHovered ? 5 : 0}>
                     House of cards

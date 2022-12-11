@@ -1,6 +1,6 @@
 import { Flex, Container, Heading, Image, Box } from "@chakra-ui/react";
 import AddMovieModal from "../addMovieModal";
-import ButtonWithIcon from "../buttonWithIcon";
+import ButtonWithIcon from "../ui/buttonWithIcon";
 import FeaturedMovies from "../featuredMovies";
 import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
