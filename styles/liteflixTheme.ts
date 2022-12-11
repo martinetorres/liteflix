@@ -1,5 +1,3 @@
-import { extendTheme } from "@chakra-ui/react";
-
 const desktopBreakpoint = '1200px';
 
 export const theme = {

@@ -22,7 +22,7 @@ export default function Slider() {
                 boxSize='100%'
                 justifyContent='space-between'
                 alignItems={{base: 'center', desktop: 'flex-end'}}
-                top={{base: '40vh', desktop: 0}}
+                paddingTop={{base: '40vh', desktop: 0}}
                 direction={{base: 'column', desktop: 'row'}}
                 textAlign={{base: 'center', desktop: 'left'}}
             >
@@ -67,6 +67,12 @@ export default function Slider() {
                         />
                     </Flex>
                 </Box>
+
+                <Box 
+                    background='linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, #242424 100%);' 
+                    position='absolute' width='100%' height='190px' bottom={0}
+                    display={{ base: 'block', desktop: 'none' }}
+                />
                 
                 <Box paddingRight={50} alignSelf='center'>
                     <MoviesDropdown />
