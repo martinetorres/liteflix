@@ -74,7 +74,7 @@ export default function Slider() {
                     display={{ base: 'block', desktop: 'none' }}
                 />
                 
-                <Box paddingRight={50} alignSelf='center'>
+                <Box paddingRight={{ base: 0, desktop: 50 }} alignSelf='center'>
                     <MoviesDropdown />
                     <FeaturedMovies />
                 </Box>
