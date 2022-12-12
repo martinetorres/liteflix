@@ -86,12 +86,12 @@ export default function Slider() {
                     </Flex>
                 </Box>
                 
-                    <Box paddingRight={{ base: 0, desktop: 50 }} alignSelf='center'>
-                        <Slide direction='down' delay={0.8}>
-                            <MoviesDropdown />
-                            <FeaturedMovies />
-                        </Slide>
-                    </Box>
+                <Box paddingRight={{ base: 0, desktop: 50 }} alignSelf='center'>
+                    <Slide direction='down' delay={0.8}>
+                        <MoviesDropdown />
+                        <FeaturedMovies />
+                    </Slide>
+                </Box>
 
                 <AddMovieModal />
 
