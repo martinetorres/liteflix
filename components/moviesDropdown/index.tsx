@@ -15,7 +15,13 @@ export default function MoviesDropdown() {
                 Ver:
             </Heading>
             <Box>
-                <Select options={options} defaultValue={options[0]} styles={dropdownStyles} isSearchable={false} />
+                <Select 
+                    options={options} 
+                    defaultValue={options[0]} 
+                    styles={dropdownStyles} 
+                    isSearchable={false} 
+                    instanceId='select-movie-type'
+                />
             </Box>
         </Flex>
     )
