@@ -16,6 +16,7 @@ a {
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 button {
@@ -28,15 +29,14 @@ button:hover {
   opacity: 0.8;
 }
 
-.scaleBackgroundDown {
-  background-size: 105%;
-  animation: scaleDownBg 9s;
-  transform-origin: right bottom;
+.animateBackground {
+  animation: animateBg 9s;
+  overflow: hidden !important;
 }
 
-@keyframes scaleDownBg {
-  from {background-size: 105%}
-  to {background-size: 100%}
+@keyframes animateBg {
+  from { scale: 1.1}
+  to { scale: 1 }
 }
 
 @font-face {

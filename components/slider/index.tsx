@@ -10,17 +10,31 @@ export default function Slider() {
 
     return(
         <Container>
+
+            <Box w='100vw' h='100vh' overflow='hidden' position='absolute'>
+                <Image 
+                    src='img/main_background.png'
+                    boxSize='100%'
+                    objectFit='cover'
+                    className='animateBackground'
+                />
+
+                <Box 
+                    background='linear-gradient(180deg, rgba(36, 36, 36, 0) 20%, #242424 100%);' 
+                    position='absolute' width='100%' height='190px' bottom={0}
+                    display={{ base: 'block', desktop: 'none' }}
+                />
+            </Box>
             
             <Flex  
-                boxSize='100%'
-                minH='100vh'
                 justifyContent='space-between'
                 alignItems={{base: 'center', desktop: 'flex-end'}}
                 paddingTop={{base: '40vh', desktop: 0}}
                 direction={{base: 'column', desktop: 'row'}}
                 textAlign={{base: 'center', desktop: 'left'}}
-                backgroundImage='url(img/main_background.png)' 
-                className="scaleBackgroundDown"
+                backgroundImage='url()' 
+                position='absolute'
+                boxSize='100%'
             >
 
                 <Box 
@@ -71,12 +85,6 @@ export default function Slider() {
                         </Slide>
                     </Flex>
                 </Box>
-
-                <Box 
-                    background='linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, #242424 100%);' 
-                    position='absolute' width='100%' height='190px' bottom={0}
-                    display={{ base: 'block', desktop: 'none' }}
-                />
                 
                     <Box paddingRight={{ base: 0, desktop: 50 }} alignSelf='center'>
                         <Slide direction='down' delay={0.8}>
