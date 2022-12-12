@@ -6,6 +6,7 @@ import { AddIcon } from '@chakra-ui/icons';
 import ImageIcon from "../ui/imageIcon";
 import ModalContext from "../../context/modalContext";
 import DrawerContext from "../../context/drawerContext";
+import Slide from "../animations/slide";
 
 export default function Navbar() {
     return(
@@ -25,11 +26,13 @@ export default function Navbar() {
                 </Heading>
                 
                 <Box display={{base: 'none', desktop: 'inline-block' }} justifySelf='flex-start' marginRight='auto'>
-                    <ModalContext.Consumer>
-                        { ({openModal})  => 
-                            <ButtonWithIcon text='Agregar película' variant='secondary' icon={<AddIcon />} onClick={ () => openModal() } />
-                        }
-                    </ModalContext.Consumer>
+                    <Slide direction='down' delay={0.1}>
+                        <ModalContext.Consumer>
+                            { ({openModal})  => 
+                                <ButtonWithIcon text='Agregar película' variant='secondary' icon={<AddIcon />} onClick={ () => openModal() } />
+                            }
+                        </ModalContext.Consumer>
+                    </Slide>
                 </Box>
 
                 <Box order={{ base: -1, desktop: 'inherit' }}>
