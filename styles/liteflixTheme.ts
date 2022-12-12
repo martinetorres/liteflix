@@ -49,5 +49,10 @@ export const theme = {
     },
     breakpoints: {
         desktop: desktopBreakpoint
+    },
+    transitionDefaults: {
+        enter: {
+            duration: 10
+        }
     }
 };
