@@ -28,15 +28,15 @@ button:hover {
   opacity: 0.8;
 }
 
-.scaleDown {
-  animation: fade 2s;
-  overflow: hidden;
-  transform-origin: center;
+.scaleBackgroundDown {
+  background-size: 105%;
+  animation: scaleDownBg 9s;
+  transform-origin: right bottom;
 }
 
-@keyframes fade {
-  from {opacity: 0.2}
-  to {opacity: 1}
+@keyframes scaleDownBg {
+  from {background-size: 105%}
+  to {background-size: 100%}
 }
 
 @font-face {

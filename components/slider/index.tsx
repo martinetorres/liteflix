@@ -10,23 +10,17 @@ export default function Slider() {
 
     return(
         <Container>
-            <Image 
-                boxSize='100%'
-                objectFit='cover'
-                src='/img/main_background.png' 
-                alt='Featured movie'
-                position='absolute'
-                left={0}
-                className='scaleDown'
-            />
             
-            <Flex position='absolute' 
+            <Flex  
                 boxSize='100%'
+                minH='100vh'
                 justifyContent='space-between'
                 alignItems={{base: 'center', desktop: 'flex-end'}}
                 paddingTop={{base: '40vh', desktop: 0}}
                 direction={{base: 'column', desktop: 'row'}}
                 textAlign={{base: 'center', desktop: 'left'}}
+                backgroundImage='url(img/main_background.png)' 
+                className="scaleBackgroundDown"
             >
 
                 <Box 
