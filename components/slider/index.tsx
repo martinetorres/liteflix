@@ -6,17 +6,18 @@ import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
 import Slide from "../animations/slide";
 
-export default function Slider() {
-
+export default function Slider({movie} : {movie: any}) {
     return(
         <Container>
-
+            { movie &&
+            <>
             <Box w='100vw' h='100vh' overflow='hidden' position='absolute'>
                 <Image 
-                    src='img/main_background.png'
+                    src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
                     boxSize='100%'
                     objectFit='cover'
                     className='animateBackground'
+                    opacity={0.9}
                 />
 
                 <Box 
@@ -54,7 +55,7 @@ export default function Slider() {
                             colorScheme={'brand'} 
                             textTransform={'uppercase'}
                         >
-                            La casa de papel
+                            { movie.title }
                         </Heading>
                     </Slide>
 
@@ -96,6 +97,8 @@ export default function Slider() {
                 <AddMovieModal />
 
             </Flex>
+            </>
+            }
         </Container>
     )
 }
