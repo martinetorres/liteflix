@@ -26,7 +26,7 @@ export default function Navbar() {
                 </Heading>
                 
                 <Box display={{base: 'none', desktop: 'inline-block' }} justifySelf='flex-start' marginRight='auto'>
-                    <Slide direction='down' delay={0.1}>
+                    <Slide direction='left' delay={0.1}>
                         <ModalContext.Consumer>
                             { ({openModal})  => 
                                 <ButtonWithIcon text='Agregar película' variant='secondary' icon={<AddIcon />} onClick={ () => openModal() } />
