@@ -13,11 +13,12 @@ export default function Slider({movie} : {movie: any}) {
             <>
             <Box w='100vw' h='100vh' overflow='hidden' position='absolute'>
                 <Image 
-                    src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`}
                     boxSize='100%'
                     objectFit='cover'
+                    objectPosition='top'
                     className='animateBackground'
-                    opacity={0.9}
+                    opacity={0.8}
                 />
 
                 <Box 

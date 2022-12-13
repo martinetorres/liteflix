@@ -10,7 +10,7 @@ export default function MoviesDropdown() {
       ];
 
     return(
-        <Flex direction='row' justifyContent='center' alignItems='center' marginBottom={20} marginTop={20}>
+        <Flex direction='row' justifyContent='center' alignItems='center' marginBottom={20} marginTop={50}>
             <Heading as='h4' marginTop={0} fontSize={18} paddingBottom={2}>
                 Ver:
             </Heading>
