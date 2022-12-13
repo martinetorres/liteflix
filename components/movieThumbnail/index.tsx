@@ -31,6 +31,8 @@ export default function MovieThumbnail(
                 src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
                 w={220}
                 h={146}
+                boxShadow='0px 0px 12px #24242470'
+                borderRadius={4}
             />
 
             <Flex 
