@@ -1,4 +1,4 @@
-const desktopBreakpoint = '1200px';
+const desktopBreakpoint = '1280px';
 
 export const theme = {
     styles: {

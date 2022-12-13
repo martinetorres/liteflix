@@ -34,7 +34,6 @@ export default function Slider({movie} : {movie: any}) {
                 paddingTop={{base: '40vh', desktop: 0}}
                 direction={{base: 'column', desktop: 'row'}}
                 textAlign={{base: 'center', desktop: 'left'}}
-                backgroundImage='url()' 
                 position='absolute'
                 boxSize='100%'
             >
@@ -42,6 +41,7 @@ export default function Slider({movie} : {movie: any}) {
                 <Box 
                     paddingLeft={{ base: 0, desktop: 50 }} 
                     paddingBottom={{ base: 50, desktop: 110 }}
+                    alignSelf={{ base: 'center', desktop: 'flex-end' }}
                 >
 
                     <SlideFade in delay={0.5}>
@@ -88,7 +88,10 @@ export default function Slider({movie} : {movie: any}) {
                     </Flex>
                 </Box>
                 
-                <Box paddingRight={{ base: 0, desktop: 50 }} alignSelf='center'>
+                <Box 
+                    paddingRight={{ base: 0, desktop: 50 }} 
+                    alignSelf={{ base: 'center', desktop: 'flex-start' }}
+                >
                     <Slide direction='down' delay={0.8}>
                         <MoviesDropdown />
                         <FeaturedMovies />
