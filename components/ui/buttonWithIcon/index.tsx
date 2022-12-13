@@ -7,7 +7,14 @@ export default function ButtonWithIcon(
         { text: string, variant: string, hasBorder?: boolean, icon?: React.ReactNode, onClick?: any }) 
     
     {
-    const background = variant === 'primary' ? '#242424' : 'none';
+
+    let background = 'none';
+    if (variant === 'primary') {
+        background = '#242424';
+    } else
+    if (variant === 'secondary' && hasBorder) {
+        background = '#24242460';
+    }
 
     return( 
         <Button onClick={onClick} variant='link'>
