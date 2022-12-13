@@ -3,9 +3,9 @@ import Slider from '../components/slider'
 import Navbar from '../components/navbar'
 import SideMenu from '../components/sideMenu'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { getFeaturedMovie } from '../api/movies'
+import { getFeaturedMovie, getPopularMovies } from '../api/movies'
 
-export default function Home({featuredMovie} : InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({featuredMovie, popularMovies} : InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
       <Head>
@@ -17,7 +17,7 @@ export default function Home({featuredMovie} : InferGetServerSidePropsType<typeo
       <main>
         <Navbar />
 
-        <Slider movie={featuredMovie} />
+        <Slider movie={featuredMovie} popularMovies={popularMovies} />
 
         <SideMenu />
       </main>
@@ -30,6 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
       props: {
         featuredMovie: await getFeaturedMovie(),
+        popularMovies: await getPopularMovies(),
       }, 
   }
 }

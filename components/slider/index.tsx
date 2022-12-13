@@ -6,7 +6,7 @@ import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
 import Slide from "../animations/slide";
 
-export default function Slider({movie} : {movie: any}) {
+export default function Slider({movie, popularMovies} : {movie: any, popularMovies: any}) {
     return(
         <Container>
             { movie &&
@@ -94,7 +94,7 @@ export default function Slider({movie} : {movie: any}) {
                 >
                     <Slide direction='down' delay={0.8}>
                         <MoviesDropdown />
-                        <FeaturedMovies />
+                        <FeaturedMovies popularMovies={popularMovies} />
                     </Slide>
                 </Box>
 

@@ -1,13 +1,22 @@
 import { Flex } from "@chakra-ui/react";
 import MovieThumbnail from "../movieThumbnail";
 
-export default function FeaturedMovies() {
+export default function FeaturedMovies({popularMovies} : {popularMovies : any}) {
     return(
         <Flex direction='column' gap={15}>
-            <MovieThumbnail />
-            <MovieThumbnail />
-            <MovieThumbnail />
-            <MovieThumbnail />
+            {
+                popularMovies?.map( (movie: any) => {
+                    return(
+                        <MovieThumbnail 
+                            title={movie.title}
+                            poster_path={movie.poster_path}
+                            vote_average={movie.vote_average}
+                            release_date={movie.release_date}
+                        />
+                    )
+                })
+            }
+            
         </Flex>
     )
 }

@@ -9,3 +9,11 @@ export const getFeaturedMovie = async () => {
         
     return results.results[0];
 }
+
+export const getPopularMovies = async () => {
+    const results = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=6f26fd536dd6192ec8a57e94141f8b20')
+        .then(res => res.json())
+        .then(data => data);
+        
+    return results.results.slice(1, 5);
+}
