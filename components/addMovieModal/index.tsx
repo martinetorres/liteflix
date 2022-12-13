@@ -1,9 +1,12 @@
 import { Button, ChakraProvider, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
 
 export default function AddMovieModal () {
     const { onClose } = useDisclosure();
+    const [fileSelected, setFileSelected] = useState('');
+    const [movieTitle, setMovieTitle] = useState('');
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -39,7 +42,7 @@ export default function AddMovieModal () {
 
                             <ModalCloseButton color='white' />
                             <ModalBody>
-                                <FileUpload />
+                                <FileUpload onFileUpload={ setFileSelected } />
 
                                 <Input 
                                     placeholder='Título' 
@@ -54,6 +57,7 @@ export default function AddMovieModal () {
                                     maxWidth={300}
                                     margin='auto'
                                     display='block'
+                                    onChange={ (e) => setMovieTitle(e.target.value) }
                                 />
 
                                 <Button
@@ -66,7 +70,7 @@ export default function AddMovieModal () {
                                     marginBottom={10}
                                     marginTop='60px'
                                     paddingTop={5}
-                                    disabled
+                                    disabled={ !fileSelected || !movieTitle }
                                 >
                                     Subir película
                                 </Button>
