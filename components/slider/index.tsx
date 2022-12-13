@@ -24,7 +24,6 @@ export default function Slider({movie, popularMovies} : {movie: any, popularMovi
                 <Box 
                     background='linear-gradient(180deg, rgba(36, 36, 36, 0) 20%, #242424 100%);' 
                     position='absolute' width='100%' height='190px' bottom={0}
-                    display={{ base: 'block', desktop: 'none' }}
                 />
             </Box>
             
