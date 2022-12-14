@@ -1,10 +1,19 @@
 import { 
-    Button, ChakraProvider, Heading, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure, useMediaQuery } from "@chakra-ui/react";
+    ChakraProvider, 
+    Modal, 
+    ModalBody, 
+    ModalCloseButton, 
+    ModalContent,
+    ModalHeader, 
+    ModalOverlay, 
+    useDisclosure, 
+    useMediaQuery } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
 import BigButton from "../ui/bigButton";
 import CustomInput from "../ui/customInput";
+import MovieUploadedMessage from './movieUploadedMessage';
 
 export default function AddMovieModal () {
     const { onClose } = useDisclosure();
@@ -96,15 +105,8 @@ export default function AddMovieModal () {
                             </>
                             : 
                             <ModalBody color='white' textAlign='center' letterSpacing={4}>
-                                <Heading as='h1' className='brand'>
-                                    <Text><b>Lite</b>flix</Text>
-                                </Heading>
-                                <Text fontSize={24}>
-                                    ¡Felicitaciones!
-                                </Text>
-                                <Text fontSize={20}>
-                                    {movieTitle} fue correctamente subida.
-                                </Text>
+                                
+                                <MovieUploadedMessage movieTitle={movieTitle} />
 
                                 <BigButton 
                                     text='Ir a home'
