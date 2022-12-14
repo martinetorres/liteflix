@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import Select from 'react-select';
 import { dropdownStyles } from "./dropdownStyles";
 
-export default function MoviesDropdown({onSelectCallback} : {onSelectCallback: (newValue: any) => void}) {
+export default function MoviesDropdown({onSelectCallback, selectedIndex} : {onSelectCallback: (newValue: any) => void, selectedIndex: number}) {
 
     const options = [
         { value: 'popular', label: 'Populares' },
@@ -18,7 +18,7 @@ export default function MoviesDropdown({onSelectCallback} : {onSelectCallback: (
             <Box>
                 <Select 
                     options={options} 
-                    defaultValue={options[0]} 
+                    defaultValue={options[selectedIndex]} 
                     styles={dropdownStyles} 
                     isSearchable={false} 
                     instanceId='select-movie-type'

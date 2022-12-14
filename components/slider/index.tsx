@@ -95,7 +95,7 @@ export default function Slider({movie, popularMovies, localMovies} : {movie: any
                     alignSelf={{ base: 'center', desktop: 'flex-start' }}
                 >
                     <Slide direction='down' delay={0.8}>
-                        <MoviesDropdown onSelectCallback={(newValue: any) => setMovieType(newValue.value) } />
+                        <MoviesDropdown onSelectCallback={(newValue: any) => setMovieType(newValue.value) } selectedIndex={movieType === 'popular' ? 0 : 1} />
                         <FeaturedMovies movies={movieType === 'popular' ? popularMovies : localMovies} />
                     </Slide>
                 </Box>
