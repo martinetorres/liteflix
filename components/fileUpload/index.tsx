@@ -1,7 +1,8 @@
-import { Box, FormControl, Heading, Input, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, FormControl, Input, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import styles from './styles.module.css';
+import UploadProgress from "./uploadProgress";
 
 export default function FileUpload(
     {onFileUpload} : 
@@ -60,20 +61,9 @@ export default function FileUpload(
                     }
                 </Box>)
                 :
-                <Box className={styles.fileUploadProgressContainer} color='white' fontSize={18} letterSpacing={4}>
-                    Cargando: { `${Math.round(progress * 100) / 100}%` }
-                    <Box w='100%' h='4px' bg='#fff' position='relative' marginTop={4}>
-                        <Box w={`${progress}%`} h='10px' position='absolute' bg='#64EEBC' top='-3px' transition='width 500ms linear' />
-                    </Box>
-
-                    <Box textAlign='right' marginTop={4}>
-                        {
-                            progress < 100 ?
-                            <Text>Cancelar</Text> :
-                            <Text color='#64EEBC'>¡Listo!</Text>
-                        }
-                    </Box>
-                </Box>
+                <>
+                    <UploadProgress progress={progress} />
+                </>
             }
         </FormControl>
     )

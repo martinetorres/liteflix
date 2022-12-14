@@ -8,7 +8,6 @@ export default function CustomInput(
 
     const handleOnChange : ChangeEventHandler<HTMLInputElement> = (e) => {
         onChangeCallback(e.target.value);
-        console.log({e})
     }
 
     return(
