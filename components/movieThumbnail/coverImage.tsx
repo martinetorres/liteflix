@@ -1,8 +1,11 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, useTheme } from "@chakra-ui/react";
 
 export default function CoverImage(
     { isHovered, backdrop, img } :
     { isHovered: boolean, backdrop?: string, img?: string }) {
+
+    const theme = useTheme();
+    
     return(
         <Box w={220} h={146}>
             <Box 
@@ -12,7 +15,7 @@ export default function CoverImage(
                 left={0}
                 background={ 
                     isHovered ?
-                        '#242424bb' :
+                        `${theme.colors.grayDark}bb`:
                         'linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%);'
                 }
                 transition='background 200ms ease-in'
@@ -26,7 +29,7 @@ export default function CoverImage(
                     :
                     img
                 }
-                boxShadow='0px 0px 12px #24242470'
+                boxShadow={`0px 0px 12px ${theme.colors.grayDark}70`}
                 borderRadius={4}
                 w='100%'
                 h='100%'

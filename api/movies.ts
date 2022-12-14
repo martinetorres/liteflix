@@ -1,5 +1,3 @@
-
-
 export const getFeaturedMovie = async () => {
     // TODO: Move api url to .env file
     // TODO: Handle endpoint errors

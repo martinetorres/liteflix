@@ -7,7 +7,8 @@ import {
     ModalHeader, 
     ModalOverlay, 
     useDisclosure, 
-    useMediaQuery } from "@chakra-ui/react";
+    useMediaQuery, 
+    useTheme} from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
@@ -21,6 +22,7 @@ export default function AddMovieModal () {
     const [movieTitle, setMovieTitle] = useState('');
     const [movieSaved, setMovieSaved] = useState(false);
     const [showDesktopVariant] = useMediaQuery('(min-width: 680px)');
+    const theme = useTheme();
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -65,13 +67,13 @@ export default function AddMovieModal () {
                         
                         <ModalOverlay bg='#00000070'/>
 
-                        <ModalContent bg='#242424' 
+                        <ModalContent bg={ theme.colors.grayDark } 
                         paddingTop={ showDesktopVariant ? 0 : 100 }>
                         {
                             !movieSaved ?
                             <>
                             <ModalHeader 
-                                color='#64EEBC' 
+                                color={ theme.colors.main } 
                                 letterSpacing={4} 
                                 textAlign='center'
                                 marginTop={5}

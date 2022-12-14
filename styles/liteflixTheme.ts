@@ -54,5 +54,9 @@ export const theme = {
         enter: {
             duration: 10
         }
-    }
+    },
+    colors: {
+        main: '#64EEBC',
+        grayDark: '#242424',
+    },
 };

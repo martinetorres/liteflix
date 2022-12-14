@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, useTheme } from "@chakra-ui/react";
 import styles from './styles.module.css';
 
 export default function ButtonWithIcon(
@@ -8,12 +8,14 @@ export default function ButtonWithIcon(
     
     {
 
+    const theme = useTheme();
+        
     let background = 'none';
     if (variant === 'primary') {
-        background = '#242424';
+        background = theme.colors.grayDark;
     } else
     if (variant === 'secondary' && hasBorder) {
-        background = '#24242460';
+        background = `${theme.colors.grayDark}60`;
     }
 
     return( 

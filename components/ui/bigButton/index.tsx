@@ -1,8 +1,10 @@
-import { Button } from "@chakra-ui/react";
+import { Button, useTheme } from "@chakra-ui/react";
 
 export default function BigButton(
     { text, onClick, disabled, variant } :
     { text: string, onClick: () => void, disabled: boolean, variant?: string }) {
+
+    const theme = useTheme();
 
     return (
         <Button
@@ -20,9 +22,9 @@ export default function BigButton(
             minWidth={250}
             backgroundColor={variant === 'secondary' ? 'transparent' : '#fff'}
             border={variant === 'secondary' ? '1px solid #fff' : 'none'}
-            color={variant === 'secondary' ? 'white' : '#242424'}
+            color={variant === 'secondary' ? 'white' : theme.colors.grayDark }
             _hover={{
-                color: '#242424',
+                color: theme.colors.grayDark,
                 background: '#ddd'
             }}
         >

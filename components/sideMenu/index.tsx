@@ -10,6 +10,7 @@ import {
     Flex,
     theme,
     useMediaQuery,
+    useTheme,
   } from '@chakra-ui/react'
 import React from 'react'
 import DrawerContext from '../../context/drawerContext'
@@ -20,6 +21,7 @@ import MenuOptions from './menuOptions'
 export default function SideMenu() {
     const { onClose } = useDisclosure();
     const [showDesktopVariant] = useMediaQuery('(min-width: 680px)');
+    const liteFlixTheme = useTheme();
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -38,7 +40,7 @@ export default function SideMenu() {
                             onClose={() => handleClose(closeDrawer)}
                             size={ showDesktopVariant ? 'md' : 'full' }>
                             <DrawerOverlay color='#00000070' />
-                            <DrawerContent bg={ showDesktopVariant ? '#242424E5' : '#242424' }>
+                            <DrawerContent bg={ showDesktopVariant ? `${ liteFlixTheme.colors.grayDark }E5` : liteFlixTheme.colors.grayDark }>
                                 <DrawerHeader>
                                     <DrawerCloseButton color='white' left={5} top={5} />
 
