@@ -34,8 +34,7 @@ export default function SideMenu() {
                             isOpen={drawerIsOpen}
                             placement='right'
                             onClose={() => handleClose(closeDrawer)}
-                            size={{ base:'full', sm:'md' }}
-                        >
+                            size='md'>
                             <DrawerOverlay color='#00000070' />
                             <DrawerContent bg='#242424E5'>
                                 <DrawerHeader>
