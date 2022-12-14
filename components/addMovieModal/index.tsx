@@ -1,4 +1,5 @@
-import { Button, ChakraProvider, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { 
+    Button, ChakraProvider, Heading, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
@@ -7,6 +8,7 @@ export default function AddMovieModal () {
     const { onClose } = useDisclosure();
     const [fileSelected, setFileSelected] : [string, Dispatch<SetStateAction<string>>] = useState('');
     const [movieTitle, setMovieTitle] = useState('');
+    const [movieSaved, setMovieSaved] = useState(false);
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -29,6 +31,7 @@ export default function AddMovieModal () {
             localMovies.push(newMovie);
             localStorage.setItem('movies', JSON.stringify({ localMovies }));
         }
+        setMovieSaved(true);
     }
 
     return(
@@ -46,7 +49,11 @@ export default function AddMovieModal () {
                         isCentered={true}>
                         
                         <ModalOverlay bg='#00000070'/>
+
                         <ModalContent bg='#242424'>
+                        {
+                            !movieSaved ?
+                            <>
                             <ModalHeader 
                                 color='#64EEBC' 
                                 letterSpacing={4} 
@@ -93,6 +100,35 @@ export default function AddMovieModal () {
                                 </Button>
 
                             </ModalBody>
+                            </>
+                            : 
+                            <ModalBody color='white' textAlign='center' letterSpacing={4}>
+                                <Heading as='h1' className='brand'>
+                                    <Text><b>Lite</b>flix</Text>
+                                </Heading>
+                                <Text fontSize={24}>
+                                    ¡Felicitaciones!
+                                </Text>
+                                <Text fontSize={20}>
+                                    {movieTitle} fue correctamente subida.
+                                </Text>
+
+                                <Button
+                                    fontSize={18}
+                                    letterSpacing={4}
+                                    padding='35px 50px'
+                                    borderRadius={0}
+                                    margin='auto'
+                                    display='block'
+                                    marginBottom={10}
+                                    marginTop='60px'
+                                    paddingTop={5}
+                                    onClick={ () => location.reload() }
+                                >
+                                    Ir a home
+                                </Button>
+                            </ModalBody>
+                        }
                         </ModalContent>
                     </Modal>
                     </>
