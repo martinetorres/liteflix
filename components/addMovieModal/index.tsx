@@ -3,6 +3,7 @@ import {
 import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
+import BigButton from "../ui/bigButton";
 
 export default function AddMovieModal () {
     const { onClose } = useDisclosure();
@@ -88,42 +89,20 @@ export default function AddMovieModal () {
                                     onChange={ (e) => setMovieTitle(e.target.value) }
                                 />
 
-                                <Button
-                                    fontSize={18}
-                                    letterSpacing={4}
-                                    padding='35px 50px'
-                                    borderRadius={0}
-                                    margin='auto'
-                                    display='block'
-                                    marginBottom={10}
-                                    marginTop='60px'
-                                    paddingTop={5}
+                                <BigButton 
+                                    text='Subir pelicula'
                                     disabled={ !fileSelected || !movieTitle }
                                     onClick={handleSaveMovie}
-                                    minWidth={250}
-                                >
-                                    Subir película
-                                </Button>
+                                />
 
                                 {   !showDesktopVariant &&
-                                    <Button
-                                        fontSize={18}
-                                        letterSpacing={4}
-                                        padding='35px 50px'
-                                        borderRadius={0}
-                                        margin='auto'
-                                        display='block'
-                                        marginBottom={10}
-                                        marginTop='60px'
-                                        paddingTop={5}
+
+                                    <BigButton 
+                                        text='Salir'
                                         onClick={ () => handleClose(closeModal)}
-                                        background='none'
-                                        border='1px solid #fff'
-                                        color='#fff'
-                                        minWidth={250}
-                                    >
-                                        Salir
-                                    </Button>
+                                        disabled={false}
+                                        variant='secondary'
+                                    />
                                 }
 
                             </ModalBody>
@@ -140,21 +119,11 @@ export default function AddMovieModal () {
                                     {movieTitle} fue correctamente subida.
                                 </Text>
 
-                                <Button
-                                    fontSize={18}
-                                    letterSpacing={4}
-                                    padding='35px 50px'
-                                    borderRadius={0}
-                                    margin='auto'
-                                    display='block'
-                                    marginBottom={10}
-                                    marginTop='60px'
-                                    paddingTop={5}
+                                <BigButton 
+                                    text='Ir a home'
                                     onClick={ () => location.reload() }
-                                    minWidth={250}
-                                >
-                                    Ir a home
-                                </Button>
+                                    disabled={false}
+                                />
                             </ModalBody>
                         }
                         </ModalContent>
