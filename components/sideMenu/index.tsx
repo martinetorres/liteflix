@@ -8,6 +8,7 @@ import {
     useDisclosure,
     ChakraProvider,
     Flex,
+    theme,
   } from '@chakra-ui/react'
 import React from 'react'
 import DrawerContext from '../../context/drawerContext'
@@ -25,7 +26,7 @@ export default function SideMenu() {
 
     return (
         <>
-            <ChakraProvider resetCSS={false}>
+            <ChakraProvider resetCSS={false} theme={theme}>
                 <DrawerContext.Consumer>
                     { ({drawerIsOpen, openDrawer, closeDrawer}) => (
                     <>
@@ -33,7 +34,7 @@ export default function SideMenu() {
                             isOpen={drawerIsOpen}
                             placement='right'
                             onClose={() => handleClose(closeDrawer)}
-                            size='lg'
+                            size={{ base:'full', sm:'md' }}
                         >
                             <DrawerOverlay color='#00000070' />
                             <DrawerContent bg='#242424E5'>

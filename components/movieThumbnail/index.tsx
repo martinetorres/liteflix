@@ -5,14 +5,14 @@ import ImageIcon from "../ui/imageIcon";
 
 export default function MovieThumbnail(
     {
-        poster_path,
+        backdrop_path,
         title,
         vote_average,
         release_date,
         img,
     } :
     {
-        poster_path?: string,
+        backdrop_path?: string,
         title: string,
         vote_average?: number,
         release_date?: string,
@@ -45,8 +45,8 @@ export default function MovieThumbnail(
                 <Image 
                     objectFit='cover'
                     src={
-                        poster_path ?
-                            `https://image.tmdb.org/t/p/w300/${poster_path}`
+                        backdrop_path ?
+                            `https://image.tmdb.org/t/p/w300/${backdrop_path}`
                         :
                         img
                     }
