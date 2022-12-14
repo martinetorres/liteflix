@@ -13,6 +13,9 @@ export default function AddMovieModal () {
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
         onClose();
+        setFileSelected('');
+        setMovieTitle('');
+        setMovieSaved(false);
     }
     
     const handleSaveMovie = () => {
