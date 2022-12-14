@@ -1,7 +1,6 @@
-import { Box, Container, Flex, Heading, Image } from "@chakra-ui/react";
+import { Container, Flex, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import PlayButton from "../playButton";
-import ImageIcon from "../ui/imageIcon";
 import CoverImage from "./coverImage";
 import RatingAndYear from "./ratingAndYear";
 
