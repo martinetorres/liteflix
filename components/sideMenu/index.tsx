@@ -9,6 +9,7 @@ import {
     ChakraProvider,
     Flex,
     theme,
+    useMediaQuery,
   } from '@chakra-ui/react'
 import React from 'react'
 import DrawerContext from '../../context/drawerContext'
@@ -18,6 +19,7 @@ import MenuOptions from './menuOptions'
 
 export default function SideMenu() {
     const { onClose } = useDisclosure();
+    const [showFullVariant] = useMediaQuery('(min-width: 680px)');
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -34,9 +36,9 @@ export default function SideMenu() {
                             isOpen={drawerIsOpen}
                             placement='right'
                             onClose={() => handleClose(closeDrawer)}
-                            size='md'>
+                            size={ showFullVariant ? 'md' : 'full' }>
                             <DrawerOverlay color='#00000070' />
-                            <DrawerContent bg='#242424E5'>
+                            <DrawerContent bg={ showFullVariant ? '#242424E5' : '#242424' }>
                                 <DrawerHeader>
                                     <DrawerCloseButton color='white' left={5} top={5} />
 

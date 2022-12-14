@@ -1,5 +1,5 @@
 import { 
-    Button, ChakraProvider, Heading, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
+    Button, ChakraProvider, Heading, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure, useMediaQuery } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
@@ -9,6 +9,7 @@ export default function AddMovieModal () {
     const [fileSelected, setFileSelected] : [string, Dispatch<SetStateAction<string>>] = useState('');
     const [movieTitle, setMovieTitle] = useState('');
     const [movieSaved, setMovieSaved] = useState(false);
+    const [showFullVariant] = useMediaQuery('(min-width: 680px)');
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -22,7 +23,7 @@ export default function AddMovieModal () {
         const localMovies = localStorage.getItem('movies');
         const newMovie = {
             title: movieTitle,
-            img: fileSelected,
+            img: fileSelected, 
         }
         if (localMovies) {
             let localMoviesJson = JSON.parse(localMovies);
@@ -39,7 +40,7 @@ export default function AddMovieModal () {
 
     return(
         <>
-        <ChakraProvider resetCSS={false} >
+        <ChakraProvider resetCSS={false}>
             <ModalContext.Consumer>
                 { ({modalIsOpen, openModal, closeModal}) => (
                     <>
@@ -48,12 +49,13 @@ export default function AddMovieModal () {
                         onClose={() => handleClose(closeModal)} 
                         id='add-movie-modal' 
                         useInert={false}
-                        size='3xl'
+                        size={ showFullVariant ? '3xl' : 'full' }
                         isCentered={true}>
                         
                         <ModalOverlay bg='#00000070'/>
 
-                        <ModalContent bg='#242424'>
+                        <ModalContent bg='#242424' 
+                        paddingTop={ showFullVariant ? 0 : 100 }>
                         {
                             !movieSaved ?
                             <>
