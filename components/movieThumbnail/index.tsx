@@ -2,6 +2,8 @@ import { Box, Container, Flex, Heading, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import PlayButton from "../playButton";
 import ImageIcon from "../ui/imageIcon";
+import CoverImage from "./coverImage";
+import RatingAndYear from "./ratingAndYear";
 
 export default function MovieThumbnail(
     {
@@ -28,34 +30,7 @@ export default function MovieThumbnail(
             onMouseLeave={() => setIsHovered(false)}
             cursor='pointer'>
             
-            <Box w={220} h={146}>
-                <Box 
-                    position='absolute' 
-                    boxSize='100%' 
-                    top={0} 
-                    left={0}
-                    background={ 
-                        isHovered ?
-                            '#242424bb' :
-                            'linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%);'
-                    }
-                    transition='background 200ms ease-in'
-                />
-
-                <Image 
-                    objectFit='cover'
-                    src={
-                        backdrop_path ?
-                            `https://image.tmdb.org/t/p/w300/${backdrop_path}`
-                        :
-                        img
-                    }
-                    boxShadow='0px 0px 12px #24242470'
-                    borderRadius={4}
-                    w='100%'
-                    h='100%'
-                />
-            </Box>
+            <CoverImage isHovered={isHovered} backdrop={backdrop_path} img={img} />
 
             <Flex 
             position='absolute' 
@@ -78,24 +53,7 @@ export default function MovieThumbnail(
 
             </Flex>
 
-            <Flex position='absolute' bottom={15} left={0} display={isHovered ? 'flex' : 'none'} direction='row' justifyContent='space-between' w='100%' alignItems='center' color='white' paddingLeft={10} paddingRight={10}>
-                {
-                    vote_average &&
-                    <Flex direction='row' fontSize={14} lineHeight={1} letterSpacing={4}>
-                        <ImageIcon boxSize={12} img='star' />
-                        <Box marginLeft={5}>
-                            {vote_average}
-                        </Box>
-                    </Flex>
-                }
-
-                { 
-                    release_date &&
-                    <Box display='inline-block' fontSize={14} lineHeight={1} letterSpacing={4}>
-                        { new Date(release_date).getFullYear() }
-                    </Box>
-                }
-            </Flex>
+            <RatingAndYear isHovered={isHovered} stars={vote_average} release_date={release_date} />
         </Container>
     )
 }
