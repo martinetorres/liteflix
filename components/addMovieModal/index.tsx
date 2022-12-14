@@ -1,11 +1,11 @@
 import { Button, ChakraProvider, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
 
 export default function AddMovieModal () {
     const { onClose } = useDisclosure();
-    const [fileSelected, setFileSelected] = useState('');
+    const [fileSelected, setFileSelected] : [string, Dispatch<SetStateAction<string>>] = useState('');
     const [movieTitle, setMovieTitle] = useState('');
 
     const handleClose = ( closeModalCallback : Function ) => {
