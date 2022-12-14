@@ -12,6 +12,24 @@ export default function AddMovieModal () {
         closeModalCallback();
         onClose();
     }
+    
+    const handleSaveMovie = () => {
+        const localMovies = localStorage.getItem('movies');
+        const newMovie = {
+            title: movieTitle,
+            img: fileSelected,
+        }
+        if (localMovies) {
+            let localMoviesJson = JSON.parse(localMovies);
+            localMoviesJson.localMovies.push(newMovie);
+            localStorage.setItem('movies', JSON.stringify(localMoviesJson));
+        } 
+        else {
+            let localMovies = [];
+            localMovies.push(newMovie);
+            localStorage.setItem('movies', JSON.stringify({ localMovies }));
+        }
+    }
 
     return(
         <>
@@ -34,10 +52,8 @@ export default function AddMovieModal () {
                                 letterSpacing={4} 
                                 textAlign='center'
                                 marginTop={5}
-                            >
-                                    
+                            >    
                                     Agregar Película
-
                             </ModalHeader>
 
                             <ModalCloseButton color='white' />
@@ -71,6 +87,7 @@ export default function AddMovieModal () {
                                     marginTop='60px'
                                     paddingTop={5}
                                     disabled={ !fileSelected || !movieTitle }
+                                    onClick={handleSaveMovie}
                                 >
                                     Subir película
                                 </Button>
