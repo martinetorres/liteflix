@@ -19,7 +19,7 @@ import MenuOptions from './menuOptions'
 
 export default function SideMenu() {
     const { onClose } = useDisclosure();
-    const [showFullVariant] = useMediaQuery('(min-width: 680px)');
+    const [showDesktopVariant] = useMediaQuery('(min-width: 680px)');
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -36,9 +36,9 @@ export default function SideMenu() {
                             isOpen={drawerIsOpen}
                             placement='right'
                             onClose={() => handleClose(closeDrawer)}
-                            size={ showFullVariant ? 'md' : 'full' }>
+                            size={ showDesktopVariant ? 'md' : 'full' }>
                             <DrawerOverlay color='#00000070' />
-                            <DrawerContent bg={ showFullVariant ? '#242424E5' : '#242424' }>
+                            <DrawerContent bg={ showDesktopVariant ? '#242424E5' : '#242424' }>
                                 <DrawerHeader>
                                     <DrawerCloseButton color='white' left={5} top={5} />
 

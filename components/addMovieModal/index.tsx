@@ -9,7 +9,7 @@ export default function AddMovieModal () {
     const [fileSelected, setFileSelected] : [string, Dispatch<SetStateAction<string>>] = useState('');
     const [movieTitle, setMovieTitle] = useState('');
     const [movieSaved, setMovieSaved] = useState(false);
-    const [showFullVariant] = useMediaQuery('(min-width: 680px)');
+    const [showDesktopVariant] = useMediaQuery('(min-width: 680px)');
 
     const handleClose = ( closeModalCallback : Function ) => {
         closeModalCallback();
@@ -49,13 +49,13 @@ export default function AddMovieModal () {
                         onClose={() => handleClose(closeModal)} 
                         id='add-movie-modal' 
                         useInert={false}
-                        size={ showFullVariant ? '3xl' : 'full' }
+                        size={ showDesktopVariant ? '3xl' : 'full' }
                         isCentered={true}>
                         
                         <ModalOverlay bg='#00000070'/>
 
                         <ModalContent bg='#242424' 
-                        paddingTop={ showFullVariant ? 0 : 100 }>
+                        paddingTop={ showDesktopVariant ? 0 : 100 }>
                         {
                             !movieSaved ?
                             <>
@@ -100,9 +100,31 @@ export default function AddMovieModal () {
                                     paddingTop={5}
                                     disabled={ !fileSelected || !movieTitle }
                                     onClick={handleSaveMovie}
+                                    minWidth={250}
                                 >
                                     Subir película
                                 </Button>
+
+                                {   !showDesktopVariant &&
+                                    <Button
+                                        fontSize={18}
+                                        letterSpacing={4}
+                                        padding='35px 50px'
+                                        borderRadius={0}
+                                        margin='auto'
+                                        display='block'
+                                        marginBottom={10}
+                                        marginTop='60px'
+                                        paddingTop={5}
+                                        onClick={ () => handleClose(closeModal)}
+                                        background='none'
+                                        border='1px solid #fff'
+                                        color='#fff'
+                                        minWidth={250}
+                                    >
+                                        Salir
+                                    </Button>
+                                }
 
                             </ModalBody>
                             </>
@@ -129,6 +151,7 @@ export default function AddMovieModal () {
                                     marginTop='60px'
                                     paddingTop={5}
                                     onClick={ () => location.reload() }
+                                    minWidth={250}
                                 >
                                     Ir a home
                                 </Button>

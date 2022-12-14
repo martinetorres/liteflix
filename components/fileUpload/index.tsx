@@ -1,4 +1,4 @@
-import { Box, FormControl, Heading, Input, Text } from "@chakra-ui/react";
+import { Box, FormControl, Heading, Input, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import styles from './styles.module.css';
@@ -9,6 +9,8 @@ export default function FileUpload(
     
     const [uploadedFile, setUploadedFile] = useState('');
     const [progress, setProgress] = useState(0);
+    
+    const [isDesktop] = useMediaQuery('(min-width: 1280px)');
 
     const handleFileSelected = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const file = e.target?.files?.length && e.target.files[0];var filereader = new FileReader();
@@ -50,7 +52,12 @@ export default function FileUpload(
                         <Image src='/img/icons/file.png' width={16} height={16} alt="File upload icon" />
                     </span>
                     
-                    <span>Agregá un archivo o arrastralo y soltalo aquí</span>
+                    {
+                        isDesktop ?
+                        <span>Agregá un archivo o arrastralo y soltalo aquí</span>
+                        :
+                        <span>Agregá un archivo</span>
+                    }
                 </Box>)
                 :
                 <Box className={styles.fileUploadProgressContainer} color='white' fontSize={18} letterSpacing={4}>
