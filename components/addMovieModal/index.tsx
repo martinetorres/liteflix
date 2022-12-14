@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import ModalContext from "../../context/modalContext";
 import FileUpload from "../fileUpload";
 import BigButton from "../ui/bigButton";
+import CustomInput from "../ui/customInput";
 
 export default function AddMovieModal () {
     const { onClose } = useDisclosure();
@@ -73,21 +74,7 @@ export default function AddMovieModal () {
                             <ModalBody>
                                 <FileUpload onFileUpload={ setFileSelected } />
 
-                                <Input 
-                                    placeholder='Título' 
-                                    textAlign='center' 
-                                    fontSize={16} 
-                                    letterSpacing={4} 
-                                    border='none' 
-                                    borderBottom='2px solid white'
-                                    color='white' 
-                                    boxShadow='none'
-                                    borderRadius={0}
-                                    maxWidth={300}
-                                    margin='auto'
-                                    display='block'
-                                    onChange={ (e) => setMovieTitle(e.target.value) }
-                                />
+                                <CustomInput onChangeCallback={ setMovieTitle } />
 
                                 <BigButton 
                                     text='Subir pelicula'
