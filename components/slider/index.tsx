@@ -5,8 +5,11 @@ import FeaturedMovies from "../featuredMovies";
 import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
 import Slide from "../animations/slide";
+import { useState } from "react";
 
-export default function Slider({movie, popularMovies} : {movie: any, popularMovies: any}) {
+export default function Slider({movie, popularMovies, localMovies} : {movie: any, popularMovies: any, localMovies: any}) {
+    const [movieType, setMovieType] = useState('popular');
+
     return(
         <Container>
             { movie &&
@@ -92,8 +95,8 @@ export default function Slider({movie, popularMovies} : {movie: any, popularMovi
                     alignSelf={{ base: 'center', desktop: 'flex-start' }}
                 >
                     <Slide direction='down' delay={0.8}>
-                        <MoviesDropdown />
-                        <FeaturedMovies popularMovies={popularMovies} />
+                        <MoviesDropdown onSelectCallback={(newValue: any) => setMovieType(newValue.value) } />
+                        <FeaturedMovies movies={movieType === 'popular' ? popularMovies : localMovies} />
                     </Slide>
                 </Box>
 

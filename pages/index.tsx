@@ -6,6 +6,21 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { getFeaturedMovie, getPopularMovies } from '../api/movies'
 
 export default function Home({featuredMovie, popularMovies} : InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+  let localMovies = [];
+  if (typeof window !== 'undefined') {
+    const localMoviesString = localStorage.getItem('movies');
+    if (localMoviesString) {
+      const allLocalMovies = JSON.parse(localMoviesString).localMovies;
+      const localMoviesAmount = allLocalMovies.length;
+
+      if (localMoviesAmount < 4) {
+        localMovies = allLocalMovies;
+      }
+      else localMovies = allLocalMovies.slice(localMoviesAmount - 4, localMoviesAmount)
+    }
+  } 
+
   return (
     <div>
       <Head>
@@ -17,7 +32,7 @@ export default function Home({featuredMovie, popularMovies} : InferGetServerSide
       <main>
         <Navbar />
 
-        <Slider movie={featuredMovie} popularMovies={popularMovies} />
+        <Slider movie={featuredMovie} popularMovies={popularMovies} localMovies={localMovies} />
 
         <SideMenu />
       </main>

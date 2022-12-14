@@ -1,8 +1,9 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Dispatch, SetStateAction } from "react";
 import Select from 'react-select';
 import { dropdownStyles } from "./dropdownStyles";
 
-export default function MoviesDropdown() {
+export default function MoviesDropdown({onSelectCallback} : {onSelectCallback: (newValue: any) => void}) {
 
     const options = [
         { value: 'popular', label: 'Populares' },
@@ -21,6 +22,7 @@ export default function MoviesDropdown() {
                     styles={dropdownStyles} 
                     isSearchable={false} 
                     instanceId='select-movie-type'
+                    onChange={ onSelectCallback }
                 />
             </Box>
         </Flex>

@@ -9,12 +9,14 @@ export default function MovieThumbnail(
         title,
         vote_average,
         release_date,
+        img,
     } :
     {
-        poster_path: string,
+        poster_path?: string,
         title: string,
-        vote_average: number,
-        release_date: string,
+        vote_average?: number,
+        release_date?: string,
+        img?: string,
     }
 ) {
     const [isHovered, setIsHovered] = useState(false);
@@ -42,7 +44,12 @@ export default function MovieThumbnail(
 
                 <Image 
                     objectFit='cover'
-                    src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+                    src={
+                        poster_path ?
+                            `https://image.tmdb.org/t/p/w300/${poster_path}`
+                        :
+                        img
+                    }
                     boxShadow='0px 0px 12px #24242470'
                     borderRadius={4}
                     w='100%'
@@ -72,15 +79,22 @@ export default function MovieThumbnail(
             </Flex>
 
             <Flex position='absolute' bottom={15} left={0} display={isHovered ? 'flex' : 'none'} direction='row' justifyContent='space-between' w='100%' alignItems='center' color='white' paddingLeft={10} paddingRight={10}>
-                <Flex direction='row' fontSize={14} lineHeight={1} letterSpacing={4}>
-                    <ImageIcon boxSize={12} img='star' />
-                    <Box marginLeft={5}>
-                        {vote_average}
+                {
+                    vote_average &&
+                    <Flex direction='row' fontSize={14} lineHeight={1} letterSpacing={4}>
+                        <ImageIcon boxSize={12} img='star' />
+                        <Box marginLeft={5}>
+                            {vote_average}
+                        </Box>
+                    </Flex>
+                }
+
+                { 
+                    release_date &&
+                    <Box display='inline-block' fontSize={14} lineHeight={1} letterSpacing={4}>
+                        { new Date(release_date).getFullYear() }
                     </Box>
-                </Flex>
-                <Box display='inline-block' fontSize={14} lineHeight={1} letterSpacing={4}>
-                    2020
-                </Box>
+                }
             </Flex>
         </Container>
     )
