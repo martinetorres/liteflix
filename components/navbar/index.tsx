@@ -6,7 +6,7 @@ import { AddIcon } from '@chakra-ui/icons';
 import ImageIcon from "../ui/imageIcon";
 import ModalContext from "../../context/modalContext";
 import DrawerContext from "../../context/drawerContext";
-import Slide from "../animations/slide";
+import Slide from "../ui/animations/slide";
 
 export default function Navbar() {
     return(

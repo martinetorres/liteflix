@@ -4,7 +4,7 @@ import ButtonWithIcon from "../ui/buttonWithIcon";
 import FeaturedMovies from "../featuredMovies";
 import MoviesDropdown from "../moviesDropdown";
 import ImageIcon from "../ui/imageIcon";
-import Slide from "../animations/slide";
+import Slide from "../ui/animations/slide";
 import { useState } from "react";
 
 export default function Slider({movie, popularMovies, localMovies} : {movie: any, popularMovies: any, localMovies: any}) {
