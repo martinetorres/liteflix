@@ -16,7 +16,7 @@ export default function Slider({movie, popularMovies, localMovies} : {movie: any
             <>
             <Box w='100vw' h='100vh' overflow='hidden' position='absolute'>
                 <Image 
-                    src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
                     boxSize='100%'
                     objectFit='cover'
                     objectPosition='top'
